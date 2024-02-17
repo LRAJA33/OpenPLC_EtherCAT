@@ -103,7 +103,8 @@ These variables must be copied into PLC program and used to access the IO
 
 This is how the runtime log should look like if EtherCAT is installed and configured properly
 
-![image](https://github.com/r2k-in-the-vortex/ethercat_src/assets/30666740/b70c32f4-fa37-4bee-890b-bbf8ec4fc084)
+
+![Screenshot from 2024-02-17 23-01-50](https://github.com/LRAJA33/OpenPLC_EtherCAT/assets/105126037/b60fa411-500c-4a69-a4b6-f4ba29b4af5c)
 
 If everything goes well then EtherCAT status will progress like so
 ```bash
