@@ -1,5 +1,7 @@
 # OpenPLC_EtherCAT
+
 EtherCAT connection with OpenPLC
+
 **Key Functions and Their Purposes:**
 EtherCATinit: Initializes EtherCAT communication, sets up the master, and configures the slaves.
 RegisterRxInDomain and RegisterTxInDomain: Registers the PDOs in the EtherCAT domain.
