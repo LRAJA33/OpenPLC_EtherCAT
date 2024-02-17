@@ -90,9 +90,12 @@ Now OpenPLC can be started, on startup OpenPLC will print out (also in web ide) 
 
 e.g.
 ```bash
-Slave0_Channel_1 AT %IX0.0 : BOOL; (* EK1814 EtherCAT-EA-Koppler (1A E-Bus, 4 K. Dig. Ein, 3ms, 4 K.  *)
-Slave0_Channel_2 AT %IX1.0 : BOOL; (* EK1814 EtherCAT-EA-Koppler (1A E-Bus, 4 K. Dig. Ein, 3ms, 4 K.  *)
-Slave0_Channel_3 AT %IX2.0 : BOOL; (* EK1814 EtherCAT-EA-Koppler (1A E-Bus, 4 K. Dig. Ein, 3ms, 4 K.  *)
+Slave0_2nd_Send_PDO_Maping2_StatusRegister AT %IW0.0 : UINT; (* SD700_ECAT_V1.2_G *)
+Slave0_2nd_Send_PDO_Maping2_ActualPosition AT %ID1.0 : DINT; (* SD700_ECAT_V1.2_G *)
+Slave0_2nd_Send_PDO_Maping2_ActualVelocity AT %ID2.0 : DINT; (* SD700_ECAT_V1.2_G *)
+Slave0_2nd_Recive_PDO_Maping_ControlRegister AT %QW0.0 : UINT; (* SD700_ECAT_V1.2_G *)
+Slave0_2nd_Recive_PDO_Maping_TargetVelocity AT %QD1.0 : DINT; (* SD700_ECAT_V1.2_G *)
+Slave0_2nd_Recive_PDO_Maping_Modes_of_operation AT %QB2.0 : BYTE; (* SD700_ECAT_V1.2_G *)
 ....
 ```
 
