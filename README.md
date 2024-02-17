@@ -12,6 +12,7 @@ terminate_handler: Cleanup function to release allocated resources upon terminat
 
 **Setup instructions**
 Dependencies: 
+
 `sudo apt-get update
 sudo apt-get install udev
 sudo apt-get install libxml2-dev
@@ -19,17 +20,20 @@ sudo apt-get install autoconf
 sudo apt-get install libtool
 to install ethercat capable branch of OpenPLC
 git clone https://github.com/thiagoralves/OpenPLC_v3.git
-cd OpenPLC_v3`
+cd OpenPLC_v3`````
 
 **ethercat_src is arranged as submodules so these need to be fetched**
+
 `git submodule init
 git submodule update
 cd utils/ethercat_src
 
 git submodule init
 git submodule update
-cd external/ethercat`
+cd external/ethercat```
+
 **now Etherlabs IgH EtherCAT master needs to be built and installed**
+
 `./bootstrap
 ./configure --sysconfdir=/etc --enable-8139too=no
 make
@@ -37,8 +41,8 @@ make modules
 
 sudo make install
 sudo make modules_install install
-sudo depmod`
-
+sudo depmod
+```
 
 **Configure the ethernet adapter**
 configured to correct ethernet adapter, first figure out mac address of interface you wish to use (ifconfig)
@@ -70,7 +74,7 @@ Slave0_2nd_Send_PDO_Maping2_ActualPosition AT %ID1.0 : DINT; (* SD700_ECAT_V1.2_
 Slave0_2nd_Send_PDO_Maping2_ActualVelocity AT %ID2.0 : DINT; (* SD700_ECAT_V1.2_G *)
 Slave0_2nd_Recive_PDO_Maping_ControlRegister AT %QW0.0 : UINT; (* SD700_ECAT_V1.2_G *)
 Slave0_2nd_Recive_PDO_Maping_TargetVelocity AT %QD1.0 : DINT; (* SD700_ECAT_V1.2_G *)
-Slave0_2nd_Recive_PDO_Maping_Modes_of_operation AT %QB2.0 : BYTE; (* SD700_ECAT_V1.2_G *)`
+Slave0_2nd_Recive_PDO_Maping_Modes_of_operation AT %QB2.0 : BYTE; (* SD700_ECAT_V1.2_G *)```
 
 ![Screenshot from 2024-02-17 23-01-50](https://github.com/LRAJA33/OpenPLC_EtherCAT/assets/105126037/7aa38421-2fbb-4576-ab2f-f7dca8cfdb39)
 If everything goes well then EtherCAT status will progress like so
