@@ -1,15 +1,22 @@
-EtherCAT connection with OpenPLC
+**EtherCAT connection with OpenPLC**
+
+
+**Hardwares:**
+
+Raspberry pi4
+Veichi SD700 servo drive
+
 
 
 Key Functions and Their Purposes:
 
-EtherCATinit: Initializes EtherCAT communication, sets up the master, and configures the slaves.
-RegisterRxInDomain and RegisterTxInDomain: Registers the PDOs in the EtherCAT domain.
-ConfigureSlave: Configures the slave settings, including PDOs and synchronization.
-PlcInputOutputPrintout: Prints PLC Input and Output configurations for linking with the PLC program.
-EtherCATcyclic: Handles cyclic EtherCAT communication, including reading inputs, writing outputs, and sending/receiving process data.
-check_domain1_state and check_master_state: Monitor the state of EtherCAT domains and the master.
-terminate_handler: Cleanup function to release allocated resources upon termination.
+**EtherCATinit: **Initializes EtherCAT communication, sets up the master, and configures the slaves.
+**RegisterRxInDomain and RegisterTxInDomain:** Registers the PDOs in the EtherCAT domain.
+**ConfigureSlave: **Configures the slave settings, including PDOs and synchronization.
+**PlcInputOutputPrintout:** Prints PLC Input and Output configurations for linking with the PLC program.
+**EtherCATcyclic:** Handles cyclic EtherCAT communication, including reading inputs, writing outputs, and sending/receiving process data.
+**check_domain1_state and check_master_state:** Monitor the state of EtherCAT domains and the master.
+**terminate_handler:** Cleanup function to release allocated resources upon termination.
 
 **Setup instructions**
 Dependencies: 
@@ -106,14 +113,24 @@ For example, running the following script before starting OpenPLC prepares EL704
 `ethercat states preop
 sleep 3
 ethercat download -p 4 -t uint16 0x10f3 5 0x0000
+
 ethercat download -p 4 -t uint32 0xf081 1 0x00100000
+
 ethercat download -p 4 -t uint8 0x1c12 0 0x00
+
 ethercat download -p 4 -t uint8 0x1c13 0 0x00
+
 ethercat download -p 4 -t uint16 0x1c12 1 0x1600
+
 ethercat download -p 4 -t uint16 0x1c12 2 0x1602
+
 ethercat download -p 4 -t uint16 0x1c12 3 0x1604
+
 ethercat download -p 4 -t uint16 0x1c13 1 0x1a00
+
 ethercat download -p 4 -t uint16 0x1c13 1 0x1a03
+
 ethercat download -p 4 -t uint8 0x1c12 0 0x03
+
 ethercat download -p 4 -t uint8 0x1c13 0 0x02`
 The specific list of parameters and in which order they have to be written is device specific, one way to determine correct configuration is to set the device up in TwinCAT or other commercial EtherCAT capable PLC software and copy the configuration from there.
