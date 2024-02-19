@@ -10,13 +10,20 @@ Veichi SD700 servo drive
 
 Key Functions and Their Purposes:
 
-**EtherCATinit: **Initializes EtherCAT communication, sets up the master, and configures the slaves.
+**EtherCATinit:** Initializes EtherCAT communication, sets up the master, and configures the slaves.
+
 **RegisterRxInDomain and RegisterTxInDomain:** Registers the PDOs in the EtherCAT domain.
+
 **ConfigureSlave: **Configures the slave settings, including PDOs and synchronization.
+
 **PlcInputOutputPrintout:** Prints PLC Input and Output configurations for linking with the PLC program.
+
 **EtherCATcyclic:** Handles cyclic EtherCAT communication, including reading inputs, writing outputs, and sending/receiving process data.
+
 **check_domain1_state and check_master_state:** Monitor the state of EtherCAT domains and the master.
+
 **terminate_handler:** Cleanup function to release allocated resources upon termination.
+
 
 **Setup instructions**
 Dependencies: 
@@ -55,9 +62,12 @@ sudo depmod`
 **Configure the ethernet adapter**
 configured to correct ethernet adapter, first figure out mac address of interface you wish to use (ifconfig)
 and then configure ethercat
+
 set correct mac address to MASTER0_DEVICE="xx:xx:xx:xx:xx:xx" and set DEVICE_MODULES="generic" unless you have a native driver available save the file and exit
 a device reboot at this point is recommended
+
 After startup etherlabs master should be running, this can be verified by ls /dev/EtherCAT0 and by information from sudo ethercat master which shows the state of the master interface. ethercat --help for more information.
+
 if EtherCAT0 doesn't run, try to start it with
 systemctl start ethercat   # For systemd based distro
 /etc/init.d/ethercat start # For init.d based distro
