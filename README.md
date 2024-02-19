@@ -116,12 +116,14 @@ AL states: OP. means all slave devices are operational
 Advanced devices
 Some devices like many servo drives will not start up unless they are correctly configured, which involves Service Data Objects
 
-OpenPLC and ethercat_src provide no means to configure SDOs, but IgH EtherCAT master does
+OpenPLC and ethercat_src provide no means to configure SDOs, but IgH EtherCAT master does (Refer "servo_sdo_config.sh" file for Veichi servo drive)
 
 For example, running the following script before starting OpenPLC prepares EL7047 stepper driver in pos 4 for OP mode, it will not enter OP mode without this configuration
 
 `ethercat states preop
+
 sleep 3
+
 ethercat download -p 4 -t uint16 0x10f3 5 0x0000
 
 ethercat download -p 4 -t uint32 0xf081 1 0x00100000
