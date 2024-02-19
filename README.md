@@ -14,7 +14,7 @@ Key Functions and Their Purposes:
 
 **RegisterRxInDomain and RegisterTxInDomain:** Registers the PDOs in the EtherCAT domain.
 
-**ConfigureSlave: **Configures the slave settings, including PDOs and synchronization.
+**ConfigureSlave:** Configures the slave settings, including PDOs and synchronization.
 
 **PlcInputOutputPrintout:** Prints PLC Input and Output configurations for linking with the PLC program.
 
@@ -143,4 +143,5 @@ ethercat download -p 4 -t uint16 0x1c13 1 0x1a03
 ethercat download -p 4 -t uint8 0x1c12 0 0x03
 
 ethercat download -p 4 -t uint8 0x1c13 0 0x02`
+
 The specific list of parameters and in which order they have to be written is device specific, one way to determine correct configuration is to set the device up in TwinCAT or other commercial EtherCAT capable PLC software and copy the configuration from there.
